@@ -1,0 +1,1 @@
+msgBox "tu bylo ostrzezenie dotyczace reklam ale je wywalilem w postprocessingu przed robieniem tego open source wiec juz nie wazne", 16,"wez to zamknij"

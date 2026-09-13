@@ -1,0 +1,16 @@
+ext fun print_char(ch: Char);
+
+const VGA_WIDTH: Int = 80;
+const VGA_MEMORY: Int = 753664;
+
+// lmao why this does not work 
+//  i leave this as a proof-of-concept implementation
+unsafe fun put_char_at(ch: UInt8, color: UInt8, x: Int, y: Int) {
+    var terminal_buffer: *UInt16 = VGA_MEMORY as *UInt16;
+    var index: Int = y * VGA_WIDTH + x;
+    *(terminal_buffer + index) = (color as UInt16) * 256 + (ch as UInt16);
+}
+
+pub unsafe fun start() {
+    print_char('H');
+}

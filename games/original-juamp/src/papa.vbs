@@ -1,0 +1,1 @@
+msgBox "Mam nadzieje ze bylo fajnie", 6,"Pa pa - Pozegnanie"

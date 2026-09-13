@@ -1,0 +1,1 @@
+msgBox "Twoja zona chce urodzic dzieci. Kontynuowac?", 4+32,"DZIECI"

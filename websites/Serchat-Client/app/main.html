@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root {
+            --bg-primary: #303030;
+            --bg-secondary: #000;
+            --bg-tertiary: #171717;
+            --fg: #fff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            color: var(--fg);
+            font-family: monospace;
+            font-size: 20px;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-primary);
+        }
+
+        .upper-half {
+            display: flex;
+            flex-grow: 1;
+            overflow: auto;
+        }
+
+        .lower-half p:has(#user-name), .lower-half p:has(#user-name) * {
+            font-size: 12px;
+        }
+
+        .lower-half {
+            background-color: var(--bg-secondary);
+            display: flex;
+            gap: 10px;
+            padding: 10px;
+        }
+
+        .lower-half img {
+            max-width: 50px;
+            border-radius: 50%;
+        }
+
+        .fake-body {
+            display: flex;
+            flex-direction: column;
+            height: 100dvh;
+        }
+
+        .server-list {
+            background-color: var(--bg-secondary);
+            min-width: 75px;            
+            max-width: 75px;        
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+            padding: 20px 0;
+            overflow: auto;
+        }
+
+        .channel-list {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            padding: 10px;
+            overflow: auto;
+        }
+
+        .server-entry {
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            background-color: var(--bg-tertiary);
+            font-size: 30px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .channel-entry {
+            padding: 5px;
+            cursor: pointer;
+            background-color: var(--bg-tertiary);
+        }
+
+        .channel-entry + .category-name {
+            margin-top: 20px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        main {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: var(--bg-primary);
+            display: flex;
+            flex-direction: column;
+        }
+
+        main .msg-area {
+            padding: 10px;
+            overflow-y: auto;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .message {
+            display: flex;
+            gap: 10px;
+            max-width: 100%;
+        }
+
+        .message-pfp {
+            border-radius: 50%;
+            width: 75px;
+            aspect-ratio: 1 / 1;
+        }
+
+        .message-text, .message-text *,
+        #channel-desc, #channel-desc * {
+            font-size: 16px;
+            max-width: 100%;
+            word-wrap: break-word;
+        }
+
+        .channel-details, .type-area {
+            padding: 5px;
+            background-color: var(--bg-secondary);
+        }
+
+        .type-area {
+            display: flex;
+            gap: 5px;
+        }
+
+        .type-area textarea {
+            border: none;
+            background-color: var(--bg-tertiary);
+            resize: none;
+            outline: none;
+            flex-grow: 1;
+            height: 30px;
+            padding: 5px;
+        }
+
+        .type-area button {
+            background-color: blue;
+            width: 30px;
+            height: 30px;
+            border: none;
+        }
+
+        .error-area {
+            z-index: 10000;
+            position: absolute;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        @keyframes error {
+            0% {
+                transform: translateX(-500px);
+            }
+        
+            100% {
+                transform: translateX(0px);
+            }
+        }
+
+        .error-box {
+            background-color: red;
+            padding: 5px 15px;
+            border-radius: 10px;
+            animation: error linear 0.25s;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-area"></div>
+    <div class="fake-body">
+        <div class="upper-half">
+            <div class="server-list"></div>
+            <div class="channel-list"></div>
+        </div>
+        <div class="lower-half">
+            <img src="/app/abstract-user-flat-3.png" alt="user picture">
+            <div>
+                <span id="display-name">Loading...</span>
+                <p>@<span id="user-name">cat</span></p>
+            </div>
+        </div>
+        <main class="hidden">
+            <div class="channel-details">
+                <p id="channel-name"></p>
+                <p id="channel-desc"></p>
+            </div>
+            <div class="msg-area"></div>
+            <div class="type-area">
+                <textarea placeholder="Say hello!"></textarea>
+                <button id="send"></button>
+            </div>
+        </main>
+    </div>
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
