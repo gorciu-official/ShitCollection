@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "allowJs": true,
+        "checkJs": false,
+        "skipLibCheck": true,
+        "outDir": "dist/",
+        "esModuleInterop": true,
+        "module": "CommonJS"
+    },
+    "include": [
+        "src/*"
+    ],
+    "exclude": [
+        "node_modules/**"
+    ],
+}

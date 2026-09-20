@@ -1,0 +1,29 @@
+{
+    "name": "sunfred",
+    "description": "The Sunfred AI",
+    "version": "1.0.0",
+    "author": {
+        "name": "Gorciu",
+        "url": "https://github.com/gorciu-official"
+    },
+    "maintainers": [
+        {
+            "name": "Gorciu",
+            "url": "https://github.com/gorciu-official"
+        }
+    ],
+
+    "main": "dist/index.js",
+    "scripts": {
+        "build": "tsc",
+        "app": "electron .",
+
+        "start": "npm install && npm run build && npm run app"
+    },
+
+    "dependencies": {
+        "typescript": "^5.5.4",
+        "electron": "^32.0.1",
+        "discord.js": "^14.15.3"
+    }
+}
