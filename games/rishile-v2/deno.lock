@@ -1,0 +1,17 @@
+{
+  "version": "5",
+  "specifiers": {
+    "jsr:@std/encoding@*": "1.0.11",
+    "jsr:@std/encoding@^1.0.11": "1.0.11"
+  },
+  "jsr": {
+    "@std/encoding@1.0.11": {
+      "integrity": "e7cef2f0b3153bccc17431e7c864a1de03a4b6d9647389c43e08aaa775d37385"
+    }
+  },
+  "workspace": {
+    "dependencies": [
+      "jsr:@std/encoding@^1.0.11"
+    ]
+  }
+}
