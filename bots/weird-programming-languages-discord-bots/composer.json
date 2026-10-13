@@ -1,0 +1,16 @@
+{
+    "name": "gorciu/php-discord-bot",
+    "description": "A Discord bot written in PHP",
+    "type": "project",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Gorciu",
+            "email": "gorciuyt@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "team-reflex/discord-php": "dev-master"
+    }
+}
